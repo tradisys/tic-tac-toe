@@ -1,0 +1,47 @@
+.no_scroll_y {
+    overflow-y: hidden;
+}
+
+.landscape {
+    display: block;
+}
+
+.portrait {
+    display: block;
+}
+
+.desktop {
+    display: block;
+}
+
+.tablet {
+    display: block;
+}
+
+.mobile {
+    display: block;
+}
+
+.lt_desktop_width {
+    display: block;
+}
+
+.lt_tablet_width {
+    display: block;
+}
+
+.locale__en_us {
+    display: block;
+}
+
+.locale__ru_ru {
+    display: block;
+}
+
+.locale__zh_ch {
+    display: block;
+}
+
+.locale__zh_tw {
+    display: block;
+}

@@ -1,0 +1,123 @@
+
+ссылка на js либу, которая взаимодействует с блокчейном
+https://github.com/wavesplatform/waves-api
+
+
+
+
+
+#################################
+# create seed from loaded words #
+#################################
+const inalAccount = Waves.Seed.fromExistingPhrase('learn empty exotic film turtle address loud menu try crater defy boil mutual used dentist');
+
+# access keyPair
+inalAccount.keyPair
+
+
+
+
+########################################################################
+# на каждый клик по ячейке будет слаться транзакция вот таким способом #
+########################################################################
+const data = [{
+key: 'cell1',
+value: 1,
+type: 'integer'
+},
+{key: 'deadline',
+value: 1536753037 (current timestamp + 1000),
+type: 'integer'}];
+
+const dataTxObj = Object.assign(Helpers.TX_EXAMPLES.DATA, {
+data: data,
+fee: await Waves.tools.getMinimumDataTxFee(data) + 400000,
+sender: seed.address,
+senderPublicKey: seed.keyPair.publicKey
+});
+const dataTx = await Waves.tools.createTransaction(Waves.constants.DATA_TX_NAME, dataTxObj);
+dataTx.addProof(Alice.keyPair.privateKey);
+
+//send Data Transction to the network
+const dataTxJSON = await dataTx.getJSON();
+const dataTxResult35 = await Waves.API.Node.transactions.rawBroadcast(dataTxJSON);
+
+
+
+
+################################
+# обнуление/ начать новую игру #
+################################
+const data = [{
+key: 'cell1',
+value: 0 ,
+type: 'integer'
+},{
+key: 'cell2',
+value: 0 ,
+type: 'integer'
+},{
+key: 'cell3',
+value: 0 ,
+type: 'integer'
+},{
+key: 'cell4',
+value: 0 ,
+type: 'integer'
+},{
+key: 'cell5',
+value: 0 ,
+type: 'integer'
+},{
+key: 'cell6',
+value: 0 ,
+type: 'integer'
+},{
+key: 'cell7',
+value: 0 ,
+type: 'integer'
+},{
+key: 'cell8',
+value: 0 ,
+type: 'integer'
+},{
+key: 'cell9',
+value: 0 ,
+type: 'integer'
+},];
+
+const dataTxObj = Object.assign(Helpers.TX_EXAMPLES.DATA, {
+data: data,
+fee: await Waves.tools.getMinimumDataTxFee(data) + 400000,
+sender: seed.address,
+senderPublicKey: seed.keyPair.publicKey
+});
+
+const dataTx = await Waves.tools.createTransaction(Waves.constants.DATA_TX_NAME, dataTxObj);
+dataTx.addProof(Alice.keyPair.privateKey);
+
+//send Data Transction to the network
+const dataTxJSON = await dataTx.getJSON();
+const dataTxResult35 = await Waves.API.Node.transactions.rawBroadcast(dataTxJSON);
+
+
+
+######################################
+# Посылка выигрыша тому, кто выиграл #
+######################################
+
+
+// create transfer transaction
+const transferTxObj = Object.assign(Helpers.TX_EXAMPLES.TRANSFER, {
+recipient: '3MzzYQCC8Ks86exHaWV2VpaANbNLPRDunNJ',
+amount: 2000000,
+sender: seed.address,
+fee: 500000,
+senderPublicKey: seed.keyPair.publicKey
+});
+const transferTx = await Waves.tools.createTransaction(Waves.constants.TRANSFER_TX_NAME, transferTxObj);
+dataTx.addProof(Alice.keyPair.privateKey);
+
+const transferTxJSON = await transferTx.getJSON();
+console.log(transferTxJSON);
+const dataTxResult61 = await Waves.API.Node.transactions.rawBroadcast(transferTxJSON);

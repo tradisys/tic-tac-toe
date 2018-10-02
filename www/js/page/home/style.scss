@@ -1,0 +1,35 @@
+@import '../../../css/var';
+
+.page {
+    //display: flex;
+    //flex-direction: column;
+    //height: 100%;
+    //position: absolute;
+    width: 100%;
+}
+
+%header,
+.header {
+    color: $main-text-color;
+    display: block;
+    font-size: 26px;
+    letter-spacing: 0.15em;
+    padding: 20px 10px 12px;
+    text-align: center;
+    text-shadow: 1px -1px 0 #767676;
+}
+
+.header_image {
+    display: block;
+    margin: 0 auto;
+    max-height: 104px;
+    max-width: 100%;
+    padding-bottom: 8px;
+}
+
+.content_wrapper {
+    display: block;
+    //flex-grow: 1;
+    //overflow: auto;
+    //position: relative;
+}

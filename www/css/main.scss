@@ -1,0 +1,26 @@
+/* stylelint-disable selector-pseudo-class-no-unknown */
+
+@import './var';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-attachment: fixed;
+    background-color: $main-bg-color;
+    background-image: url('./i/bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $main-text-color;
+    font-family: $main-font-family;
+    font-size: $main-font-size;
+    line-height: $main-line-height;
+    //overflow-y: scroll;
+}
+
+:global .app-wrapper {
+    min-height: 100%;
+}

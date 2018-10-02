@@ -1,0 +1,111 @@
+@import './../../../css/service';
+@import './../../page/home/style';
+
+.wrapper {
+    @extend %clear-full;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    //min-height: 100%;
+    //position: absolute;
+    //width: 100%;
+}
+
+.field {
+    background-color: rgba(154, 150, 147, 0.64);
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    margin: 14px 0;
+    max-width: 512px;
+    min-width: 320px;
+    padding: 10px;
+    width: 50%;
+}
+
+%game-result-p,
+.game_result_p {
+    @extend %header;
+
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.game_result_button {
+    @extend %game-result-p;
+
+    cursor: pointer;
+}
+
+.input_file {
+    background-color: #fff;
+    cursor: pointer;
+    //cursor: pointer;
+    //height: 100%;
+    //left: 0;
+    //opacity: 0;
+    //position: absolute;
+    //top: 0;
+    //width: 100%;
+    display: block;
+    height: 36px;
+    margin-right: -115px;
+    opacity: 0;
+    position: relative;
+    width: 108px;
+    z-index: 1;
+}
+
+.button_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .button {
+        display: block;
+        margin: 0 7px;
+    }
+}
+
+.log_list_wrapper {
+    box-sizing: border-box;
+    margin-top: 30px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 10px;
+    width: 100%;
+}
+
+.log_list {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    display: block;
+    min-height: 100px;
+    padding: 10px;
+}
+
+.log_message {
+    background-color: #777;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    user-select: text;
+    word-break: break-word;
+
+    &.log_message__success {
+        background-color: #2a2;
+    }
+
+    &.log_message__error {
+        background-color: #a22;
+    }
+
+    &.log_message__info {
+        background-color: #22a;
+    }
+}
