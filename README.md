@@ -1,6 +1,6 @@
-## Installation:
+##Ride script is located in file tic-tac-toe.script, set correct public keys there before deployment
 
-### Ride script is located in file tic-tac-toe.script, set correct public keys there
+## Installation:
 
 ### Install libpng-dev for pngquant (need for webpack):
 > $ [sudo] apt-get install --no-install-recommends gcc make libpng-dev
