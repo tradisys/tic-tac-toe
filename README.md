@@ -1,4 +1,4 @@
-##Ride script is located in file tic-tac-toe.script, set correct public keys there before deployment
+## Ride script is located in file tic-tac-toe.script, set correct public keys there before deployment
 
 ## Installation:
 
